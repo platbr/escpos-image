@@ -27,4 +27,5 @@ Gem::Specification.new do |spec|
 
   spec.add_dependency "escpos"
   spec.add_dependency "chunky_png"
+  spec.add_dependency "mini_magick", "~> 4.5.1"
 end

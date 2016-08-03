@@ -68,7 +68,7 @@ module Escpos
     def convert_to_monochrome(image_path, opts = {})
       image = MiniMagick::Image.open(image_path)
       image.flatten
-      image.grayscale 'Rec709Luma'
+      image.colorscape 'Gray'
       if opts.fetch(:dither, true)
         image.monochrome
       else
