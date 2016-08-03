@@ -1,7 +1,7 @@
 module Escpos
   class Image
 
-    VERSION = "1.0.0"
+    VERSION = "1.0.1"
 
     def initialize(image_path, opts = {})
       if opts.fetch(:convert_to_monochrome, false)
@@ -68,7 +68,7 @@ module Escpos
     def convert_to_monochrome(image_path, opts = {})
       image = MiniMagick::Image.open(image_path)
       image.flatten
-      image.colorscape 'Gray'
+      image.colorspace 'Gray'
       if opts.fetch(:dither, true)
         image.monochrome
       else
